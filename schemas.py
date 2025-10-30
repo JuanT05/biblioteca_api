@@ -37,3 +37,13 @@ class Autor(AutorBase):
 
     class Config:
         orm_mode = True
+
+
+class AutorCreate(AutorBase):
+    pass
+
+class AutorRead(AutorBase):
+    id: int
+
+    class Config:
+        orm_mode = True
