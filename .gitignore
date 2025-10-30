@@ -1,0 +1,5 @@
+# Archivos y carpetas que no deben subirse
+__pycache__/
+*.db
+.env
+.venv/
