@@ -12,6 +12,7 @@ def get_autor(db: Session, autor_id: int):
     return db.query(models.Autor).filter(models.Autor.id == autor_id).first()
 
 
+
 def create_autor(db: Session, autor: schemas.AutorCreate):
     db_autor = models.Autor(**autor.dict())
     db.add(db_autor)

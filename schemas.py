@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+# ---------- LIBROS ----------
 
 class LibroBase(BaseModel):
     titulo: str
@@ -21,6 +22,8 @@ class Libro(LibroBase):
         orm_mode = True
 
 
+# ---------- AUTORES ----------
+
 class AutorBase(BaseModel):
     nombre: str
     pais_origen: Optional[str]
@@ -31,19 +34,16 @@ class AutorCreate(AutorBase):
     pass
 
 
-class Autor(AutorBase):
+class AutorRead(AutorBase):
     id: int
-    libros: List[Libro] = []
 
     class Config:
         orm_mode = True
 
 
-class AutorCreate(AutorBase):
-    pass
-
-class AutorRead(AutorBase):
+class Autor(AutorBase):
     id: int
+    libros: List[Libro] = []
 
     class Config:
         orm_mode = True
